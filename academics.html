@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics & Curriculum | Govt. High School Stok</title>
+    <meta name="description" content="Academic programs, curriculum framework, examination pattern, and educational resources at Govt. High School Stok, Ladakh.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            700: '#243b53',
+                            900: '#102a43',
+                            accent: '#d97706' // amber-600
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-900 text-gray-300 text-xs py-2 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fa-solid fa-phone mr-2"></i> +91 9419218739</span>
+                <span><i class="fa-solid fa-envelope mr-2"></i> info@highschoolstok.in</span>
+                <span><i class="fa-solid fa-map-location-dot mr-2"></i> Stok Village, Leh-Ladakh, 194101</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition-colors">Alumni</a>
+                <a href="#" class="hover:text-white transition-colors">Staff Portal</a>
+                <a href="#" class="hover:text-white transition-colors">UDISE: 37070401701</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Name -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <div class="w-12 h-12 bg-brand-900 rounded-full flex items-center justify-center text-white font-serif font-bold text-xl shadow-inner">
+                        GS
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-brand-900 tracking-tight leading-none">Govt. High School</h1>
+                        <p class="text-sm text-brand-500 font-medium tracking-wide uppercase mt-1">Stok, Ladakh</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu (Academics is Active) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">About Us</a>
+                    <a href="academics.html" class="text-brand-accent font-semibold border-b-2 border-brand-accent py-2 transition-all">Academics</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Admissions</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Facilities</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Gallery</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-900 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Home</a>
+                <a href="about.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">About Us</a>
+                <a href="academics.html" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent bg-brand-50">Academics</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Admissions</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Facilities</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Gallery</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="relative bg-brand-900 h-64 md:h-80 flex items-center justify-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=2070" alt="Students in Classroom" class="w-full h-full object-cover opacity-30 mix-blend-overlay">
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Academics & Curriculum</h1>
+            <!-- Breadcrumbs -->
+            <nav class="flex justify-center text-sm font-medium text-gray-300">
+                <ol class="inline-flex items-center space-x-2">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><span class="mx-1 text-gray-500">/</span></li>
+                    <li class="text-brand-accent">Academics</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow bg-white">
+        
+        <!-- Academic Philosophy & Affiliation -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> Academic Excellence
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 leading-tight">
+                        Empowering Learners Through a Balanced & Future-Ready Curriculum
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        At Govt. High School Stok, our academic framework is affiliated with the <strong>Jammu & Kashmir Board of School Education (JKBOSE)</strong> and strictly follows the <strong>NCERT (National Council of Educational Research and Training)</strong> guidelines.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        We blend national curriculum standards with contextual Himalayan knowledge—integrating environmental conservation, digital literacy, and local culture. Our goal is to cultivate analytical thinking, creativity, and strong moral character in every student.
+                    </p>
+                    
+                    <!-- Feature Highlights -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-brand-50 p-4 rounded-xl border border-brand-100 text-center">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-brand-accent mb-2"></i>
+                            <h4 class="font-bold text-brand-900 text-sm">JKBOSE Affiliated</h4>
+                            <p class="text-xs text-gray-500 mt-1">Recognized State Board Standard</p>
+                        </div>
+                        <div class="bg-brand-50 p-4 rounded-xl border border-brand-100 text-center">
+                            <i class="fa-solid fa-laptop-code text-2xl text-brand-accent mb-2"></i>
+                            <h4 class="font-bold text-brand-900 text-sm">Digital Learning</h4>
+                            <p class="text-xs text-gray-500 mt-1">Computer Lab & Smart Classes</p>
+                        </div>
+                        <div class="bg-brand-50 p-4 rounded-xl border border-brand-100 text-center">
+                            <i class="fa-solid fa-book-reader text-2xl text-brand-accent mb-2"></i>
+                            <h4 class="font-bold text-brand-900 text-sm">NCERT Syllabus</h4>
+                            <p class="text-xs text-gray-500 mt-1">Updated Competency Pedagogy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card / Key Stats Sidebar -->
+                <div class="lg:col-span-5 bg-brand-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-white">
+                        <i class="fa-solid fa-book-open text-9xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-6 border-b border-brand-700 pb-4">
+                        Academic Structure
+                    </h3>
+                    
+                    <div class="space-y-6 relative z-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold flex-shrink-0">
+                                01
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Middle Wing (Classes VI – VIII)</h4>
+                                <p class="text-sm text-brand-100 mt-1">Focus on foundation building, conceptual clarity, multi-lingual proficiency, and experiential learning.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-brand-accent flex items-center justify-center text-white font-bold flex-shrink-0">
+                                02
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">High School Wing (Classes IX – X)</h4>
+                                <p class="text-sm text-brand-100 mt-1">Preparation for JKBOSE Secondary School Examinations (Class 10 Board) with focus on core STEM, Social Sciences, and Vocational skills.</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-brand-700 flex justify-between items-center text-xs text-brand-100">
+                            <span><i class="fa-solid fa-clock text-brand-accent mr-1"></i> School Hours: 09:30 AM – 03:30 PM</span>
+                            <span><i class="fa-solid fa-calendar-alt text-brand-accent mr-1"></i> Mon to Sat</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Curriculum & Subjects Breakdown -->
+        <section class="bg-brand-50 py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900">Subject Distribution & Scheme of Study</h2>
+                    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Comprehensive academic subjects designed to foster balanced cognitive, linguistic, and practical skills.</p>
+                    
+                    <!-- Tab Toggle Buttons -->
+                    <div class="mt-8 inline-flex p-1.5 bg-gray-200 rounded-xl space-x-2">
+                        <button id="tab-middle-btn" onclick="switchTab('middle')" class="px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-brand-900 text-white shadow-sm">
+                            Middle School (Classes 6–8)
+                        </button>
+                        <button id="tab-high-btn" onclick="switchTab('high')" class="px-6 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:text-brand-900 transition-all">
+                            High School (Classes 9–10)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Middle School (Active by default) -->
+                <div id="content-middle" class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Subject 1 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-blue-50 text-brand-500 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Languages</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Focus on reading comprehension, grammar, and creative expression across three core languages.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-700">
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">English</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Hindi</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Urdu / Bhoti</span>
+                            </div>
+                        </div>
+
+                        <!-- Subject 2 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-amber-50 text-brand-accent rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Mathematics</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Building numeric reasoning, basic algebra, geometry, data handling, and logical problem-solving.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-700">
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">NCERT Math</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Practical Math Kits</span>
+                            </div>
+                        </div>
+
+                        <!-- Subject 3 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-green-50 text-emerald-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-flask"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">General Science</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Introductory Physics, Chemistry, and Biology combined with hands-on lab experiments and observation.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-700">
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Physical Sciences</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Life Sciences</span>
+                            </div>
+                        </div>
+
+                        <!-- Subject 4 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-earth-asia"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Social Science</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Exploring history, geography, civic life, and the unique socio-cultural ecosystem of Ladakh and India.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-700">
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Our Pasts</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Geography</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Civics</span>
+                            </div>
+                        </div>
+
+                        <!-- Subject 5 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Computer Education</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Fundamental computer applications, typing skills, digital ethics, and basic coding awareness.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-700">
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">MS Office</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Internet Safety</span>
+                            </div>
+                        </div>
+
+                        <!-- Subject 6 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Art, Health & Physical Ed.</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Fostering physical fitness, local crafts, traditional music, and sports activities.</p>
+                            <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-700">
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Physical Education</span>
+                                <span class="bg-brand-50 px-2.5 py-1 rounded-md">Arts & Crafts</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Tab Content: High School (Hidden initially) -->
+                <div id="content-high" class="hidden space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- High School Sub 1 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-blue-50 text-brand-500 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-book-journal-whills"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">General English</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Advanced prose, poetry, functional grammar, letter writing, and essay writing as per JKBOSE Board standard.</p>
+                            <span class="text-xs font-semibold text-brand-accent bg-amber-50 px-2.5 py-1 rounded-md">Core Subject • 100 Marks</span>
+                        </div>
+
+                        <!-- High School Sub 2 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-square-root-variable"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Mathematics</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Real numbers, polynomials, linear equations, trigonometry, mensuration, statistics, and probability.</p>
+                            <span class="text-xs font-semibold text-brand-accent bg-amber-50 px-2.5 py-1 rounded-md">Core Subject • 100 Marks</span>
+                        </div>
+
+                        <!-- High School Sub 3 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-green-50 text-emerald-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-atom"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Science (Phy, Chem, Bio)</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Integrated theoretical study and laboratory practical sessions in Physics, Chemistry, and Biological sciences.</p>
+                            <span class="text-xs font-semibold text-brand-accent bg-amber-50 px-2.5 py-1 rounded-md">Theory (80) + Practical (20)</span>
+                        </div>
+
+                        <!-- High School Sub 4 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Social Science</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">History (India and Modern World), Political Science, Geography, Economics, and Disaster Management.</p>
+                            <span class="text-xs font-semibold text-brand-accent bg-amber-50 px-2.5 py-1 rounded-md">Core Subject • 100 Marks</span>
+                        </div>
+
+                        <!-- High School Sub 5 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-amber-50 text-brand-accent rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">2nd Language (Urdu/Hindi)</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Selected state language course as mandated by the J&K Board of School Education curriculum.</p>
+                            <span class="text-xs font-semibold text-brand-accent bg-amber-50 px-2.5 py-1 rounded-md">Core Subject • 100 Marks</span>
+                        </div>
+
+                        <!-- High School Sub 6 -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-lg flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-900 mb-2">Vocational / IT Subject</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Optional practical skills module in Information Technology (IT-ITES) or Tourism & Hospitality.</p>
+                            <span class="text-xs font-semibold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-md">Practical Skilled Course</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Examination & Evaluation Pattern -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                    <span class="w-8 h-[2px] bg-brand-accent"></span> Assessment System
+                </div>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">Evaluation & Grading Scheme</h2>
+                <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Following the Continuous and Comprehensive Evaluation (CCE) framework prescribed by JKBOSE.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Eval Card 1 -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 relative hover:border-brand-accent transition-colors shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-900 flex items-center justify-center text-xl font-bold mb-6">
+                        T1
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Formative Assessments (FA)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Conducted continuously throughout the term through class tests, unit assignments, oral quizzes, projects, and lab activities.
+                    </p>
+                    <ul class="text-xs text-gray-500 space-y-2 border-t border-gray-100 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Regular Unit Tests</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Subject Enrichment Activities</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Homework & Attendance Marks</li>
+                    </ul>
+                </div>
+
+                <!-- Eval Card 2 -->
+                <div class="bg-brand-900 text-white rounded-2xl p-8 relative shadow-lg transform md:-translate-y-2">
+                    <span class="absolute top-4 right-4 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Key Milestone</span>
+                    <div class="w-12 h-12 rounded-xl bg-brand-700 text-brand-accent flex items-center justify-center text-xl font-bold mb-6">
+                        SA
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Summative Assessments (SA)</h3>
+                    <p class="text-brand-100 text-sm leading-relaxed mb-4">
+                        Term-End comprehensive written examinations conducted at mid-session and end-session to evaluate cumulative understanding.
+                    </p>
+                    <ul class="text-xs text-brand-100 space-y-2 border-t border-brand-700 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Term-I (Autumn Examination)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Term-II (Annual Examination)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Class X Board Exams (JKBOSE Conducted)</li>
+                    </ul>
+                </div>
+
+                <!-- Eval Card 3 -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 relative hover:border-brand-accent transition-colors shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-900 flex items-center justify-center text-xl font-bold mb-6">
+                        Co
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Co-Scholastic Evaluation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Assessment of life skills, discipline, moral values, environmental sensitivity, participation in games, and cultural activities.
+                    </p>
+                    <ul class="text-xs text-gray-500 space-y-2 border-t border-gray-100 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> 5-Point Grading Scale (A to E)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Eco-Club & Social Work</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brand-accent mr-2"></i> Sports & Physical Fitness</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Academic Calendar Highlights (Ladakh Specific Session) -->
+        <section class="bg-brand-50 py-16 md:py-20 border-t border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                            <span class="w-8 h-[2px] bg-brand-accent"></span> Session Roadmap
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">Academic Calendar 2026–27</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-4 md:mt-0 max-w-md">
+                        Note: Academic session in Ladakh follows the traditional March–November operational window with winter vacation during peak winter.
+                    </p>
+                </div>
+
+                <!-- Timeline / Key Milestones Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-emerald-500 shadow-sm">
+                        <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded uppercase">March 2026</span>
+                        <h4 class="font-bold text-brand-900 text-lg mt-3">Session Commencement</h4>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">School reopens after winter break. Distribution of textbooks, orientation, and regular classes begin.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-brand-accent shadow-sm">
+                        <span class="text-xs font-bold text-brand-accent bg-amber-50 px-2 py-1 rounded uppercase">July 2026</span>
+                        <h4 class="font-bold text-brand-900 text-lg mt-3">Mid-Term Examinations</h4>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">Completion of 50% syllabus, Unit Test 2, and Mid-Term PTM with parents.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-blue-500 shadow-sm">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded uppercase">October 2026</span>
+                        <h4 class="font-bold text-brand-900 text-lg mt-3">Pre-Board & Annual Exams</h4>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">Class X Pre-Board exams and Annual Examinations for Classes VI to IX prior to severe winter setting in.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-purple-500 shadow-sm">
+                        <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded uppercase">Dec – Feb</span>
+                        <h4 class="font-bold text-brand-900 text-lg mt-3">Winter Vacation / Camp</h4>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">Official winter break. Winter coaching camps organized for Class X Board candidates.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Student Resources & Downloads Corner -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> Academic Support
+                    </div>
+                    <h2 class="text-3xl font-serif font-bold text-brand-900 leading-tight">
+                        Download Syllabi, Sample Papers & Guides
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We provide open access to official syllabus copies, model question papers, and study material to assist students in self-study and examination preparation.
+                    </p>
+                    <div class="bg-brand-50 p-4 rounded-xl border border-brand-100 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-info text-brand-accent text-xl flex-shrink-0"></i>
+                        <p class="text-xs text-brand-900">
+                            For CBSE e-textbooks or digital study modules, students can also access the DIKSHA portal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Downloadable Items Table / Cards -->
+                <div class="lg:col-span-7 bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                    <div class="bg-brand-900 text-white px-6 py-4 font-bold text-base flex justify-between items-center">
+                        <span><i class="fa-solid fa-file-pdf mr-2 text-brand-accent"></i> Download Corner</span>
+                        <span class="text-xs font-normal text-brand-100">Updated for 2026-27</span>
+                    </div>
+                    <div class="divide-y divide-gray-100">
+                        
+                        <!-- Resource Item 1 -->
+                        <div class="p-4 sm:p-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold text-sm">
+                                    PDF
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">JKBOSE Class 10 Syllabus Breakdown (2026)</h4>
+                                    <p class="text-xs text-gray-500 mt-0.5">Size: 1.4 MB • Official Subject-wise Blueprint</p>
+                                </div>
+                            </div>
+                            <a href="#" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-50 text-brand-900 hover:bg-brand-accent hover:text-white transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-download"></i> <span class="hidden sm:inline">Download</span>
+                            </a>
+                        </div>
+
+                        <!-- Resource Item 2 -->
+                        <div class="p-4 sm:p-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
+                                    PDF
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">Class 9 & 10 Model Question Papers</h4>
+                                    <p class="text-xs text-gray-500 mt-0.5">Size: 3.2 MB • Math, Science & English Practice Papers</p>
+                                </div>
+                            </div>
+                            <a href="#" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-50 text-brand-900 hover:bg-brand-accent hover:text-white transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-download"></i> <span class="hidden sm:inline">Download</span>
+                            </a>
+                        </div>
+
+                        <!-- Resource Item 3 -->
+                        <div class="p-4 sm:p-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
+                                    PDF
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">Middle Wing Curriculum Guide (Classes 6-8)</h4>
+                                    <p class="text-xs text-gray-500 mt-0.5">Size: 980 KB • NCERT Learning Outcomes & Project Work</p>
+                                </div>
+                            </div>
+                            <a href="#" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-50 text-brand-900 hover:bg-brand-accent hover:text-white transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-download"></i> <span class="hidden sm:inline">Download</span>
+                            </a>
+                        </div>
+
+                        <!-- Resource Item 4 -->
+                        <div class="p-4 sm:p-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-sm">
+                                    PDF
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">Academic Calendar & Examination Datesheet</h4>
+                                    <p class="text-xs text-gray-500 mt-0.5">Size: 520 KB • Complete Session Timetable</p>
+                                </div>
+                            </div>
+                            <a href="#" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-50 text-brand-900 hover:bg-brand-accent hover:text-white transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-download"></i> <span class="hidden sm:inline">Download</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white pt-16 pb-8 border-t-[6px] border-brand-accent mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-900 font-serif font-bold text-lg">
+                            GS
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight">GHS Stok</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Government High School Stok is a premier educational institution in Ladakh, dedicated to academic rigor and character building.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> About Us</a></li>
+                        <li><a href="academics.html" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Academics Overview</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Admission Procedure</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Faculty Directory</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Photo Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Important Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Mandatory Disclosure</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Transfer Certificates</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> CBSE Official Website</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> UDISE Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Contact Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i>
+                            <span>Govt. High School Stok,<br>Stok Village, Leh-Ladakh,<br>UT Ladakh, India - 194101</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-accent"></i>
+                            <span>+91 9419218739</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-accent"></i>
+                            <a href="mailto:info@highschoolstok.in" class="hover:text-white transition-colors">info@highschoolstok.in</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-brand-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Govt. High School Stok. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Mobile Menu Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+        });
+
+        // Tab Switcher for Middle vs High School
+        function switchTab(level) {
+            const btnMiddle = document.getElementById('tab-middle-btn');
+            const btnHigh = document.getElementById('tab-high-btn');
+            const contentMiddle = document.getElementById('content-middle');
+            const contentHigh = document.getElementById('content-high');
+
+            if (level === 'middle') {
+                contentMiddle.classList.remove('hidden');
+                contentHigh.classList.add('hidden');
+
+                btnMiddle.className = "px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-brand-900 text-white shadow-sm";
+                btnHigh.className = "px-6 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:text-brand-900 transition-all";
+            } else {
+                contentMiddle.classList.add('hidden');
+                contentHigh.classList.remove('hidden');
+
+                btnHigh.className = "px-6 py-2.5 rounded-lg text-sm font-semibold transition-all bg-brand-900 text-white shadow-sm";
+                btnMiddle.className = "px-6 py-2.5 rounded-lg text-sm font-semibold text-gray-700 hover:text-brand-900 transition-all";
+            }
+        }
+    </script>
+</body>
+</html>

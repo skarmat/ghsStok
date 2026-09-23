@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt. High School Stok | Excellence in Education</title>
+    <meta name="description" content="Official website of Govt. High School Stok. Fostering excellence, character, and community in the heart of Ladakh.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            700: '#243b53',
+                            900: '#102a43',
+                            accent: '#d97706' // amber-600
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        /* Hide scrollbar for ticker but allow functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-900 text-gray-300 text-xs py-2 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fa-solid fa-phone mr-2"></i> +91 9419218739</span>
+                <span><i class="fa-solid fa-envelope mr-2"></i> info@highschoolstok.in</span>
+                <span><i class="fa-solid fa-map-location-dot mr-2"></i> Stok Village, Leh-Ladakh, 194101</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition-colors">Alumni</a>
+                <a href="#" class="hover:text-white transition-colors">Staff Portal</a>
+                <a href="#" class="hover:text-white transition-colors">UDISE: 37070401701</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Name -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <!-- Placeholder Logo -->
+                    <div class="w-12 h-12 bg-brand-900 rounded-full flex items-center justify-center text-white font-serif font-bold text-xl shadow-inner">
+                        GS
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-brand-900 tracking-tight leading-none">Govt. High School</h1>
+                        <p class="text-sm text-brand-500 font-medium tracking-wide uppercase mt-1">Stok, Ladakh</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/index.html" class="text-brand-accent font-semibold border-b-2 border-brand-accent py-2 transition-all">Home</a>
+                    <a href="/about.html" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">About Us</a>
+                    <a href="/academics.html" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Academics</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Admissions</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Facilities</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Gallery</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-900 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent bg-brand-50">Home</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">About Us</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Academics</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Admissions</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Facilities</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Gallery</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gray-900 h-[70vh] min-h-[500px]">
+        <!-- Background Image (Placeholder: Himalayan School Vibe) -->
+        <img class="absolute inset-0 w-full h-full object-cover opacity-60" src="./media/GHSStok.jpeg" alt="Govt High School Stok Campus">
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/40 to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-accent/20 text-brand-accent border border-brand-accent/30 backdrop-blur-sm text-sm font-semibold tracking-wider mb-4 animate-fade-in-up">ESTD. 1939</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Empowering Minds, <br> <span class="text-brand-accent italic">Elevating Futures.</span>
+            </h2>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl drop-shadow-md">
+                Providing quality education in the heart of Ladakh. Dedicated to academic excellence, cultural preservation, and holistic development.
+            </p>
+            <div class="mt-10 flex gap-4">
+                <a href="#" class="px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-brand-accent hover:bg-yellow-600 transition-colors shadow-lg hover:shadow-xl">
+                    Admissions 2026-27
+                </a>
+                <a href="#" class="px-8 py-3.5 border border-white/50 text-base font-medium rounded-lg text-white bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors">
+                    Explore Campus
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Ticker -->
+    <div class="bg-brand-900 text-white flex items-center border-b-4 border-brand-accent">
+        <div class="bg-brand-accent text-white font-bold px-4 md:px-8 py-3 whitespace-nowrap z-10 flex-shrink-0 flex items-center gap-2">
+            <i class="fa-solid fa-bell animate-bounce"></i> Latest Updates
+        </div>
+        <div class="overflow-hidden w-full relative h-12 flex items-center no-scrollbar">
+            <div class="animate-marquee whitespace-nowrap flex space-x-12 items-center absolute w-full">
+                <span><span class="text-brand-accent mr-2">•</span> Admission for Academic Session 2026-27 is now open for Classes VI to X.</span>
+                <span><span class="text-brand-accent mr-2">•</span> Annual Sports Meet scheduled for 15th October 2026.</span>
+                <span><span class="text-brand-accent mr-2">•</span> Congratulations to Class X students for securing 100% pass result!</span>
+                <span><span class="text-brand-accent mr-2">•</span> Parent-Teacher Meeting on 2nd Saturday of this month.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Welcome Section (Left) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> Welcome to GHS Stok
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 leading-snug">
+                        Nurturing Potential, Building Character Since 1939.
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Nestled in the serene landscape of Stok, our school has been a beacon of learning for decades. We believe in providing holistic education that blends modern pedagogical approaches with the rich cultural heritage of Ladakh.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our dedicated faculty ensures that every child is given the attention they need to thrive academically, socially, and emotionally. With state-of-the-art facilities, a robust curriculum, and a focus on extracurricular activities, we prepare our students to face the challenges of tomorrow with confidence and integrity.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-transform hover:-translate-y-1 duration-300">
+                            <div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-500 flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg">Curriculum</h4>
+                                <p class="text-sm text-gray-500 mt-1">CBSE affiliated, NCERT syllabus.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4 transition-transform hover:-translate-y-1 duration-300">
+                            <div class="w-12 h-12 rounded-lg bg-amber-50 text-brand-accent flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg">Community</h4>
+                                <p class="text-sm text-gray-500 mt-1">Strong parent & teacher association.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Head Master's Message (Right) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-4 bg-brand-50 rounded-2xl transform rotate-2 z-0"></div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 relative z-10 flex flex-col h-full">
+                        <i class="fa-solid fa-quote-left text-4xl text-brand-100 absolute top-6 left-6"></i>
+                        <h4 class="text-2xl font-serif font-bold text-brand-900 mb-6 relative z-10 text-center">Head Master's Desk</h4>
+                        
+                        <div class="flex-grow space-y-4 relative z-10 text-gray-600 italic leading-relaxed text-sm">
+                            <p>
+                                "Education is not merely about acquiring facts; it is about training the mind to think, the heart to feel, and the hands to create. At Govt. High School Stok, our mission is to empower rural youth with quality education that bridges the gap between tradition and modernity."
+                            </p>
+                            <p>
+                                "We are committed to providing a safe, inclusive, and stimulating environment where every student can discover their unique talents. I invite you to partner with us in this beautiful journey of learning and growth."
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-gray-100 flex items-center gap-4">
+                            <!-- Placeholder HM Image -->
+                            <img src="https://placehold.co/100x100/243b53/ffffff?text=P" alt="Head Master" class="w-14 h-14 rounded-full object-cover border-2 border-brand-accent">
+                            <div>
+                                <h5 class="font-bold text-gray-900">Mr. Padma Tsering</h5>
+                                <p class="text-xs text-brand-500 font-medium uppercase tracking-wide">Head Master, GHS Stok</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quick Links / Statistics -->
+        <div class="bg-brand-900 py-16 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-brand-700">
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-accent mb-2">68+</div>
+                        <div class="text-brand-100 font-medium uppercase tracking-wide text-sm">Students</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-accent mb-2">14</div>
+                        <div class="text-brand-100 font-medium uppercase tracking-wide text-sm">Expert Teachers</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-accent mb-2">1:5</div>
+                        <div class="text-brand-100 font-medium uppercase tracking-wide text-sm">Teacher-Student Ratio</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-bold text-brand-accent mb-2">100%</div>
+                        <div class="text-brand-100 font-medium uppercase tracking-wide text-sm">Pass Result (2025)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notice Board & Upcoming Events -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 bg-gray-50">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm justify-center">
+                    <span class="w-8 h-[2px] bg-brand-accent"></span> Stay Updated <span class="w-8 h-[2px] bg-brand-accent"></span>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">Notice Board & Circulars</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Notice Item 1 -->
+                <a href="#" class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col group">
+                    <div class="bg-brand-50 text-brand-900 px-6 py-4 flex items-center justify-between border-b border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-calendar text-brand-accent"></i>
+                            <span class="font-semibold text-sm">12 Sep 2026</span>
+                        </div>
+                        <span class="text-xs font-bold px-2 py-1 bg-red-100 text-red-700 rounded text-uppercase">Urgent</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg mb-2 group-hover:text-brand-accent transition-colors">Pre-Board Examination Schedule for Class X</h4>
+                            <p class="text-sm text-gray-600 line-clamp-2">The datesheet for the upcoming pre-board examinations starting October 1st has been released. Download the PDF for details.</p>
+                        </div>
+                        <div class="mt-4 text-brand-500 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Read More <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Notice Item 2 -->
+                <a href="#" class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col group">
+                    <div class="bg-brand-50 text-brand-900 px-6 py-4 flex items-center justify-between border-b border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-calendar text-brand-accent"></i>
+                            <span class="font-semibold text-sm">05 Sep 2026</span>
+                        </div>
+                        <span class="text-xs font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded text-uppercase">General</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg mb-2 group-hover:text-brand-accent transition-colors">Teachers' Day Celebration Photos</h4>
+                            <p class="text-sm text-gray-600 line-clamp-2">A glimpse into the cultural programs organized by the students to honor our dedicated teaching staff.</p>
+                        </div>
+                        <div class="mt-4 text-brand-500 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            View Gallery <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Notice Item 3 -->
+                <a href="#" class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 overflow-hidden flex flex-col group">
+                    <div class="bg-brand-50 text-brand-900 px-6 py-4 flex items-center justify-between border-b border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-calendar text-brand-accent"></i>
+                            <span class="font-semibold text-sm">28 Aug 2026</span>
+                        </div>
+                        <span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded text-uppercase">Admissions</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg mb-2 group-hover:text-brand-accent transition-colors">List of Selected Candidates for Class VI</h4>
+                            <p class="text-sm text-gray-600 line-clamp-2">The first merit list for class VI admissions is now available. Parents are requested to complete the formalities by 15th Sep.</p>
+                        </div>
+                        <div class="mt-4 text-brand-500 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                            Download List <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                    View All Notices
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white pt-16 pb-8 border-t-[6px] border-brand-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-900 font-serif font-bold text-lg">
+                            GS
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight">GHS Stok</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Government High School Stok is a premier educational institution in Ladakh, dedicated to academic rigor and character building.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Academics Overview</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Admission Procedure</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Faculty Directory</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Photo Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Important Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Mandatory Disclosure</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Transfer Certificates</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> CBSE Official Website</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> UDISE Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Contact Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i>
+                            <span>Govt. High School Stok,<br>Stok Village, Leh-Ladakh,<br>UT Ladakh, India - 194101</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-accent"></i>
+                            <span>+91 9419218739</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-accent"></i>
+                            <a href="mailto:info@highschoolstok.in" class="hover:text-white transition-colors">info@highschoolstok.in</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-brand-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Govt. High School Stok. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Mobile Menu Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Optional: Pause marquee on hover
+            const ticker = document.querySelector('.animate-marquee');
+            const tickerContainer = ticker.parentElement;
+            
+            tickerContainer.addEventListener('mouseenter', () => {
+                ticker.style.animationPlayState = 'paused';
+            });
+            
+            tickerContainer.addEventListener('mouseleave', () => {
+                ticker.style.animationPlayState = 'running';
+            });
+        });
+    </script>
+</body>
+</html>
