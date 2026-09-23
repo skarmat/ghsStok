@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions 2026-27 | Govt. High School Stok, Leh-Ladakh</title>
+    <meta name="description" content="Official Admissions Portal for Govt. High School Stok. Apply for Class VI to X admissions, check eligibility, fee structure, and government schemes.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            700: '#243b53',
+                            900: '#102a43',
+                            accent: '#d97706' // amber-600
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .step-active {
+            border-color: #d97706;
+            background-color: #f0f4f8;
+            color: #102a43;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-900 text-gray-300 text-xs py-2 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fa-solid fa-phone mr-2 text-brand-accent"></i> +91 9419218739</span>
+                <span><i class="fa-solid fa-envelope mr-2 text-brand-accent"></i> admissions@highschoolstok.in</span>
+                <span><i class="fa-solid fa-location-dot mr-2 text-brand-accent"></i> Stok Village, Leh-Ladakh, 194101</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition-colors">Alumni</a>
+                <a href="#" class="hover:text-white transition-colors">Staff Portal</a>
+                <a href="#" class="hover:text-white transition-colors">UDISE: 37070401701 </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Name -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <div class="w-12 h-12 bg-brand-900 rounded-full flex items-center justify-center text-white font-serif font-bold text-xl shadow-inner">
+                        GS
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-brand-900 tracking-tight leading-none">Govt. High School</h1>
+                        <p class="text-sm text-brand-500 font-medium tracking-wide uppercase mt-1">Stok, Ladakh</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">About Us</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Academics</a>
+                    <a href="#" class="text-brand-accent font-semibold border-b-2 border-brand-accent py-2 transition-all">Admissions</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Facilities</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Gallery</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 font-medium py-2 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-900 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg left-0">
+            <div class="px-4 pt-2 pb-6 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Home</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">About Us</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Academics</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-semibold text-brand-accent bg-brand-50">Admissions</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Facilities</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Gallery</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-900 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- admissions Hero Banner -->
+    <section class="relative bg-brand-900 py-16 md:py-24 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-25 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="space-y-6 text-center md:text-left max-w-2xl">
+                    <span class="inline-flex items-center gap-2 py-1 px-3.5 rounded-full bg-brand-accent/20 text-brand-accent border border-brand-accent/40 text-sm font-semibold tracking-wider">
+                        <i class="fa-solid fa-graduation-cap"></i> SESSION 2026 – 2027
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
+                        Begin Your Journey of <br><span class="text-brand-accent italic">Excellence & Growth</span>
+                    </h2>
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed">
+                        Welcome to Government High School Stok Admissions Portal. We invite applications for Classes VI through X. Empowering the youth of Stok and surrounding villages with high-quality education, modern facilities, and cultural values.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                        <a href="#online-application-form" class="px-6 py-3.5 rounded-lg bg-brand-accent hover:bg-amber-600 text-white font-semibold shadow-lg transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-pen-to-square"></i> Apply Online Now
+                        </a>
+                        <button onclick="downloadProspectus()" class="px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold backdrop-blur-md transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down"></i> Prospectus (PDF)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Highlights Card -->
+                <div class="w-full md:w-auto bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl p-6 md:p-8 text-white max-w-md w-full shadow-2xl">
+                    <h3 class="text-xl font-serif font-bold border-b border-white/20 pb-4 mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-bullhorn text-brand-accent"></i> Key Admission Dates
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between items-center bg-white/5 p-3 rounded-lg border border-white/10">
+                            <span class="text-gray-300"><i class="fa-regular fa-calendar-check text-brand-accent mr-2"></i> Form Registration Starts</span>
+                            <span class="font-semibold text-amber-300">01 Oct 2026</span>
+                        </li>
+                        <li class="flex justify-between items-center bg-white/5 p-3 rounded-lg border border-white/10">
+                            <span class="text-gray-300"><i class="fa-regular fa-calendar-xmark text-brand-accent mr-2"></i> Last Date to Submit</span>
+                            <span class="font-semibold text-amber-300">15 Nov 2026</span>
+                        </li>
+                        <li class="flex justify-between items-center bg-white/5 p-3 rounded-lg border border-white/10">
+                            <span class="text-gray-300"><i class="fa-solid fa-clipboard-list text-brand-accent mr-2"></i> Document Verification</span>
+                            <span class="font-semibold text-amber-300">20–25 Nov 2026</span>
+                        </li>
+                        <li class="flex justify-between items-center bg-white/5 p-3 rounded-lg border border-white/10">
+                            <span class="text-gray-300"><i class="fa-solid fa-school text-brand-accent mr-2"></i> Session Commencement</span>
+                            <span class="font-semibold text-amber-300">01 Dec 2026</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-white/20 text-xs text-gray-300 text-center">
+                        <i class="fa-solid fa-circle-info mr-1 text-brand-accent"></i> Direct spot admissions available for local residents of Stok village based on seat availability.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow">
+
+        <!-- Step-by-Step Admission Process Section -->
+        <section class="py-16 md:py-20 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> Easy 4-Step Journey <span class="w-8 h-[2px] bg-brand-accent"></span>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">How to Get Admitted</h3>
+                    <p class="text-gray-600 mt-3 text-base">We strive to keep our admission process transparent, straightforward, and supportive for parents and students.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100 flex flex-col items-center text-center relative group hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-900 text-white font-bold text-xl flex items-center justify-center mb-5 shadow-lg group-hover:bg-brand-accent transition-colors">
+                            01
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-900 mb-2">Submit Application</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Fill out the digital form below or visit our school admin office to pick up a physical copy.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100 flex flex-col items-center text-center relative group hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-900 text-white font-bold text-xl flex items-center justify-center mb-5 shadow-lg group-hover:bg-brand-accent transition-colors">
+                            02
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-900 mb-2">Doc Verification</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Bring original documents (Aadhaar, Birth Certificate, Previous Marksheet) to the school office.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100 flex flex-col items-center text-center relative group hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-900 text-white font-bold text-xl flex items-center justify-center mb-5 shadow-lg group-hover:bg-brand-accent transition-colors">
+                            03
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-900 mb-2">Interaction & Review</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">A brief, friendly interaction with the student and parents to understand learning needs.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100 flex flex-col items-center text-center relative group hover:shadow-md transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-900 text-white font-bold text-xl flex items-center justify-center mb-5 shadow-lg group-hover:bg-brand-accent transition-colors">
+                            04
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-900 mb-2">Confirmation</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Receive official admission confirmation, roll number, textbook allotment, and uniform details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility Criteria & Class Matrix -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                            <span class="w-8 h-[2px] bg-brand-accent"></span> Academic Criteria
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">Eligibility & Available Seats</h3>
+                    </div>
+                    <p class="text-gray-600 mt-4 md:mt-0 max-w-md text-sm">
+                        Admissions strictly adhere to JKBOSE guidelines and UT Ladakh School Education Department norms.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-brand-900 text-white text-sm font-semibold uppercase tracking-wider">
+                                    <th class="py-4 px-6">Class / Grade</th>
+                                    <th class="py-4 px-6">Age Criteria (as of Mar 31)</th>
+                                    <th class="py-4 px-6">Prerequisite Qualification</th>
+                                    <th class="py-4 px-6">Total Seats</th>
+                                    <th class="py-4 px-6">Medium</th>
+                                    <th class="py-4 px-6 text-center">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 text-sm">
+                                <tr class="hover:bg-brand-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-bold text-brand-900 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-700 flex items-center justify-center font-bold text-xs">6th</div>
+                                        Class VI
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-700">10 – 11 Years</td>
+                                    <td class="py-4 px-6 text-gray-600">Passed Class V from recognized school</td>
+                                    <td class="py-4 px-6 font-semibold text-gray-900">35 Seats</td>
+                                    <td class="py-4 px-6 text-gray-600">English / Hindi</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Open</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-brand-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-bold text-brand-900 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-700 flex items-center justify-center font-bold text-xs">7th</div>
+                                        Class VII
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-700">11 – 12 Years</td>
+                                    <td class="py-4 px-6 text-gray-600">Passed Class VI from recognized school</td>
+                                    <td class="py-4 px-6 font-semibold text-gray-900">12 Seats</td>
+                                    <td class="py-4 px-6 text-gray-600">English / Hindi</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Open</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-brand-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-bold text-brand-900 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-700 flex items-center justify-center font-bold text-xs">8th</div>
+                                        Class VIII
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-700">12 – 13 Years</td>
+                                    <td class="py-4 px-6 text-gray-600">Passed Class VII from recognized school</td>
+                                    <td class="py-4 px-6 font-semibold text-gray-900">10 Seats</td>
+                                    <td class="py-4 px-6 text-gray-600">English / Hindi</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">Open</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-brand-50/50 transition-colors bg-amber-50/20">
+                                    <td class="py-4 px-6 font-bold text-brand-900 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-amber-100 text-brand-accent flex items-center justify-center font-bold text-xs">9th</div>
+                                        Class IX
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-700">13 – 14 Years</td>
+                                    <td class="py-4 px-6 text-gray-600">Passed Class VIII with Board/School TC</td>
+                                    <td class="py-4 px-6 font-semibold text-gray-900">25 Seats</td>
+                                    <td class="py-4 px-6 text-gray-600">English / Hindi</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">Filling Fast</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-brand-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-bold text-brand-900 flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-blue-100 text-brand-700 flex items-center justify-center font-bold text-xs">10th</div>
+                                        Class X
+                                    </td>
+                                    <td class="py-4 px-6 text-gray-700">14 – 15 Years</td>
+                                    <td class="py-4 px-6 text-gray-600">Passed Class IX (Direct Transfer only)</td>
+                                    <td class="py-4 px-6 font-semibold text-gray-900">05 Seats</td>
+                                    <td class="py-4 px-6 text-gray-600">English / Hindi</td>
+                                    <td class="py-4 px-6 text-center">
+                                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">Limited</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Application Form Section -->
+        <section id="online-application-form" class="py-16 md:py-24 bg-white scroll-mt-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+                    <!-- Form Header -->
+                    <div class="bg-brand-900 text-white p-8 md:p-10 relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl font-serif text-white pointer-events-none">
+                            GHS
+                        </div>
+                        <span class="inline-block py-1 px-3 rounded-full bg-brand-accent/20 text-brand-accent border border-brand-accent/30 text-xs font-semibold tracking-wider mb-2">OFFICIAL PORTAL</span>
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Online Student Admission Form</h3>
+                        <p class="text-brand-100 text-sm mt-2 max-w-xl">Please fill in all mandatory details carefully. After submission, keep your Reference ID saved for verification.</p>
+                    </div>
+
+                    <!-- Interactive Form -->
+                    <form id="admission-form" onsubmit="handleFormSubmit(event)" class="p-6 md:p-10 space-y-8">
+                        
+                        <!-- Form Section 1: Student Details -->
+                        <div>
+                            <h4 class="text-lg font-serif font-bold text-brand-900 border-b border-gray-200 pb-3 mb-6 flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-brand-accent text-white text-xs flex items-center justify-center font-sans font-bold">1</span>
+                                Student Information
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">First Name *</label>
+                                    <input type="text" id="firstName" required placeholder="e.g. Stanzin" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Middle Name</label>
+                                    <input type="text" id="middleName" placeholder="Optional" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Last Name *</label>
+                                    <input type="text" id="lastName" required placeholder="e.g. Dorjay" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Date of Birth *</label>
+                                    <input type="date" id="dob" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Gender *</label>
+                                    <select id="gender" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all bg-white">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Class Seeking Admission *</label>
+                                    <select id="targetClass" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all bg-white">
+                                        <option value="">Select Grade</option>
+                                        <option value="Class VI">Class VI</option>
+                                        <option value="Class VII">Class VII</option>
+                                        <option value="Class VIII">Class VIII</option>
+                                        <option value="Class IX">Class IX</option>
+                                        <option value="Class X">Class X</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Aadhaar Card Number *</label>
+                                    <input type="text" id="aadhaar" pattern="[0-9]{12}" maxLength="12" required placeholder="12-digit Aadhaar number" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Category *</label>
+                                    <select id="category" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all bg-white">
+                                        <option value="ST">Scheduled Tribe (ST)</option>
+                                        <option value="SC">Scheduled Caste (SC)</option>
+                                        <option value="OBC">OBC</option>
+                                        <option value="General">General</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Blood Group</label>
+                                    <select id="bloodGroup" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all bg-white">
+                                        <option value="Unknown">Don't Know</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Section 2: Parent / Guardian Details -->
+                        <div>
+                            <h4 class="text-lg font-serif font-bold text-brand-900 border-b border-gray-200 pb-3 mb-6 flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-brand-accent text-white text-xs flex items-center justify-center font-sans font-bold">2</span>
+                                Parent / Guardian Details
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Father's Name *</label>
+                                    <input type="text" id="fatherName" required placeholder="Full Name of Father" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Mother's Name *</label>
+                                    <input type="text" id="motherName" required placeholder="Full Name of Mother" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Primary Contact Mobile *</label>
+                                    <input type="tel" id="mobile" pattern="[0-9]{10}" maxLength="10" required placeholder="10-digit Mobile Number" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Guardian Occupation</label>
+                                    <input type="text" id="occupation" placeholder="e.g. Agriculture / Govt. Service" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Residential Address *</label>
+                                    <input type="text" id="address" required placeholder="House No., Village / Mohalla (e.g., Stok Gongma, Leh)" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Section 3: Previous Academic Details -->
+                        <div>
+                            <h4 class="text-lg font-serif font-bold text-brand-900 border-b border-gray-200 pb-3 mb-6 flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-brand-accent text-white text-xs flex items-center justify-center font-sans font-bold">3</span>
+                                Academic History
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="md:col-span-2">
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Previous School Name *</label>
+                                    <input type="text" id="prevSchool" required placeholder="Name of School last attended" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Previous Grade Passed *</label>
+                                    <input type="text" id="prevGrade" required placeholder="e.g. Class 5th" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none text-sm transition-all">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Declaration -->
+                        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" required class="mt-1 w-4 h-4 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                <span class="text-xs text-gray-600 leading-relaxed">
+                                    I hereby declare that all information provided in this admission form is authentic and accurate to the best of my knowledge. I understand that any false statement may result in the rejection of this application or cancellation of admission.
+                                </span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-gray-100">
+                            <span class="text-xs text-gray-500"><i class="fa-solid fa-lock text-brand-accent mr-1"></i> Data protected under school portal guidelines.</span>
+                            <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-brand-accent hover:bg-amber-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Application Form
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Submission Confirmation Message Box (Hidden by default) -->
+                    <div id="submission-success" class="hidden p-10 text-center space-y-6">
+                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif font-bold text-brand-900">Application Submitted Successfully!</h4>
+                        <p class="text-gray-600 max-w-lg mx-auto text-sm leading-relaxed">
+                            Thank you for applying to Government High School Stok. Your provisional application has been logged in our central register.
+                        </p>
+                        
+                        <div class="bg-brand-50 border border-brand-100 rounded-2xl p-6 max-w-md mx-auto space-y-2 text-left">
+                            <div class="text-xs text-brand-500 uppercase tracking-wider font-semibold">Application Reference ID</div>
+                            <div class="text-2xl font-mono font-bold text-brand-900" id="ref-id-display">GHS-STOK-2026-0000</div>
+                            <div class="text-xs text-gray-500 pt-2 border-t border-brand-100">Please quote this reference number during document verification at the school office.</div>
+                        </div>
+
+                        <div class="flex justify-center gap-4 pt-4">
+                            <button onclick="window.print()" class="px-6 py-2.5 bg-brand-900 text-white font-medium text-sm rounded-lg hover:bg-brand-700 transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-print"></i> Print Receipt
+                            </button>
+                            <button onclick="resetForm()" class="px-6 py-2.5 bg-gray-100 text-gray-700 font-medium text-sm rounded-lg hover:bg-gray-200 transition-colors">
+                                Submit Another Form
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Required Documents Checklist -->
+        <section class="py-16 md:py-20 bg-brand-50 border-y border-brand-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                            <span class="w-8 h-[2px] bg-brand-accent"></span> Preparation Checklist
+                        </div>
+                        <h3 class="text-3xl font-serif font-bold text-brand-900">Documents Required for Admission</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            To ensure a smooth admission procedure, parents are requested to keep original copies along with two self-attested photocopies of the following documents ready prior to verification day.
+                        </p>
+                        
+                        <div class="bg-white p-4 rounded-xl border border-brand-100 shadow-sm flex items-center gap-4 text-xs text-brand-700">
+                            <i class="fa-solid fa-circle-info text-2xl text-brand-accent"></i>
+                            <span>Photographs must be recent (taken within the last 3 months) in formal school apparel if possible.</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200 space-y-4">
+                            <h4 class="font-bold text-gray-900 border-b border-gray-100 pb-3">Interactive Checklist for Parents</h4>
+                            
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">Birth Certificate (Issued by Registrar of Births / Municipal Authority)</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">Transfer Certificate (TC) from previous school counter-signed by Education Dept</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">Previous Class Marksheet / Progress Card</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">Student & Parent Aadhaar Card photocopies</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">Scheduled Tribe (ST) / Category Certificate (if applicable)</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">4 Passport size colored photographs of the student</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 hover:bg-brand-50/50 transition-colors cursor-pointer">
+                                    <input type="checkbox" class="w-5 h-5 text-brand-accent rounded border-gray-300 focus:ring-brand-accent">
+                                    <span class="text-sm font-medium text-gray-700">Bank Account Details (Photocopy of Passbook front page for DBT Welfare schemes)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Fee Structure & Govt Welfare Initiatives -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> Zero Financial Barrier <span class="w-8 h-[2px] bg-brand-accent"></span>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">Fees & Government Welfare Schemes</h3>
+                    <p class="text-gray-600 mt-3 text-base">As a Government institution under UT Ladakh Administration, we provide free education and comprehensive welfare support to all students.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-gradient-to-br from-brand-900 to-brand-700 text-white rounded-2xl p-8 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="w-12 h-12 bg-amber-500/20 text-brand-accent border border-amber-500/30 rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                            <h4 class="text-xl font-bold font-serif mb-2">Zero Tuition Fee</h4>
+                            <p class="text-brand-100 text-sm leading-relaxed mb-6">
+                                Education is 100% free for all students from Class VI to Class X. No monthly tuition fee or admission capitation charges are levied.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-brand-500/40 text-xs font-semibold text-brand-accent uppercase tracking-wider">
+                            Guaranteed by Education Dept.
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="w-12 h-12 bg-blue-50 text-brand-500 rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <h4 class="text-xl font-bold font-serif text-gray-900 mb-2">Free Books & Uniforms</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                Under Samagra Shiksha Scheme, every student receives free NCERT textbooks, notebooks, school uniforms, and winter kit support.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 text-xs font-semibold text-brand-500 uppercase tracking-wider">
+                            Samagra Shiksha Abhiyan
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="w-12 h-12 bg-amber-50 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <h4 class="text-xl font-bold font-serif text-gray-900 mb-2">PM-POSHAN Mid-Day Meals</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                Hygienic, hot, and nutritious meals prepared daily in the school dining hall to ensure proper growth and focus for all young minds.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 text-xs font-semibold text-brand-accent uppercase tracking-wider">
+                            PM POSHAN Scheme
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission FAQ Accordion -->
+        <section class="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wide uppercase text-sm">
+                        <span class="w-8 h-[2px] bg-brand-accent"></span> Got Questions? <span class="w-8 h-[2px] bg-brand-accent"></span>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-900 mt-2">Frequently Asked Questions</h3>
+                </div>
+
+                <div class="space-y-4" id="faq-accordion">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center font-bold text-gray-900 hover:text-brand-accent transition-colors">
+                            <span>Is there an entrance exam for Class VI or Class IX admission?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                            No, admissions at Government High School Stok are granted based on previous academic performance, eligibility verification, and seat availability. In case applications exceed available seats, priority is given to local residents of Stok village.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center font-bold text-gray-900 hover:text-brand-accent transition-colors">
+                            <span>Can students residing outside Stok village apply?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                            Yes, students from nearby villages in the Leh district are welcome to apply subject to availability of seats. Transport support options can be discussed during the parent interaction session.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center font-bold text-gray-900 hover:text-brand-accent transition-colors">
+                            <span>What medium of instruction is followed?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                            The medium of instruction is English, following the NCERT curriculum under JKBOSE. Special support classes for English language fluency and Bhoti/Ladakhi language heritage lessons are integrated into the timetable.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center font-bold text-gray-900 hover:text-brand-accent transition-colors">
+                            <span>What happens if I miss the last date of online application?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6 text-sm text-gray-600 leading-relaxed border-t border-transparent">
+                            Late applications may be considered directly at the school office under the Spot Admission window, provided seats remain vacant in the respective class after the first merit list publication.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Helpdesk & Contact Section -->
+        <section class="py-16 bg-brand-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-r from-brand-700 to-brand-900 rounded-3xl p-8 md:p-12 border border-brand-500/30 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="space-y-3 text-center md:text-left">
+                        <span class="text-brand-accent uppercase font-bold text-xs tracking-wider">Admission Helpdesk</span>
+                        <h3 class="text-2xl md:text-3xl font-serif font-bold">Need Assistance with Application?</h3>
+                        <p class="text-gray-300 text-sm max-w-lg">
+                            Our admission coordinator is available Monday to Saturday (10:00 AM – 4:00 PM) to guide parents through the procedure.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                        <a href="tel:+911982123456" class="px-6 py-3.5 bg-brand-accent hover:bg-amber-600 text-white font-semibold rounded-xl text-center transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Call Admissions Office
+                        </a>
+                        <a href="mailto:admissions@ghsstok.edu.in" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold rounded-xl text-center transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> Email Query
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white pt-16 pb-8 border-t-[6px] border-brand-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-900 font-serif font-bold text-lg">
+                            GS
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight">GHS Stok</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Government High School Stok is a premier educational institution in Ladakh, dedicated to academic rigor and character building.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center hover:bg-brand-accent transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Academics Overview</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Admission Procedure</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Faculty Directory</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Photo Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Important Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Mandatory Disclosure</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> Transfer Certificates</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> CBSE Official Website</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-angle-right mr-2 text-xs"></i> UDISE Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 font-serif">Contact Us</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i>
+                            <span>Govt. High School Stok,<br>Stok Village, Leh-Ladakh,<br>UT Ladakh, India - 194101</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-accent"></i>
+                            <span>+91 9419218739</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-brand-accent"></i>
+                            <a href="mailto:info@ghsstok.edu.in" class="hover:text-white transition-colors">info@highschoolstok.in</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-brand-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Govt. High School Stok. All Rights Reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+
+            if (btn && menu && icon) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    if (menu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-xmark');
+                    }
+                });
+            }
+        });
+
+        // Toggle Accordions for FAQ
+        function toggleAccordion(buttonElement) {
+            const content = buttonElement.nextElementSibling;
+            const icon = buttonElement.querySelector('.fa-chevron-down');
+            
+            const allContents = document.querySelectorAll('.accordion-content');
+            const allIcons = document.querySelectorAll('#faq-accordion .fa-chevron-down');
+
+            allContents.forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                }
+            });
+
+            allIcons.forEach(i => {
+                if (i !== icon) {
+                    i.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.add('active');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Handle Online Form Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('admission-form');
+            const successBox = document.getElementById('submission-success');
+            const refDisplay = document.getElementById('ref-id-display');
+
+            // Generate a realistic Reference ID
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            const refId = `GHS-STOK-2026-${randomNum}`;
+
+            refDisplay.innerText = refId;
+
+            // Smooth transition to confirmation state
+            form.classList.add('hidden');
+            successBox.classList.remove('hidden');
+
+            // Scroll smoothly to success block
+            successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Reset form for new submission
+        function resetForm() {
+            const form = document.getElementById('admission-form');
+            const successBox = document.getElementById('submission-success');
+            
+            form.reset();
+            successBox.classList.add('hidden');
+            form.classList.remove('hidden');
+
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Simulated Prospectus Download
+        function downloadProspectus() {
+            const link = document.createElement('a');
+            const dummyContent = "Govt High School Stok - Admissions Prospectus 2026-2027\n\nWelcome to GHS Stok!\nAddress: Stok Village, Leh-Ladakh 194101\nClasses: VI to X\nUDISE Code: 01040105601\n\nFor queries: admissions@ghsstok.edu.in";
+            const blob = new Blob([dummyContent], { type: 'text/plain' });
+            link.href = URL.createObjectURL(blob);
+            link.download = 'GHS_Stok_Admissions_Prospectus_2026.txt';
+            link.click();
+        }
+    </script>
+</body>
+</html>
